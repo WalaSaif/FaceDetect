@@ -5,12 +5,11 @@ import cv2
 import sys
 from pathlib import Path
 
-# New image destination folders
-facesPath = "Faces"
-noFacesPath = "NoFaces"
-
 # Get user supplied values
 folderPath = sys.argv[1]
+facesPath = sys.argv[2]
+noFacesPath = sys.argv[3]
+
 imagefiles = [ f for f in listdir(folderPath) if isfile(join(folderPath,f)) ]
 images = numpy.empty(len(imagefiles), dtype=object)
 cascPath = "haarcascade_frontalface_default.xml"
